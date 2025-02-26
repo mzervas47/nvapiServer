@@ -6,25 +6,20 @@
 
 
 
-void identifyConnectedDisplays() {
-	NvU32 displayIDs[NVAPI_MAX_DISPLAYS] = { 0 };
+
+void overlayDisplays(OverlayManager &overlays) {
+	NvU32 displayIds[NVAPI_MAX_DISPLAYS] = { 0 };
 	NvU32 noDisplays = 0;
-
-	NvAPI_Status status = GetConnectedDisplays(displayIDs, &noDisplays);
-	if (status != NVAPI_OK) {
-		std::cerr << "GetConnectedDisplays failed: " << status << std::endl;
-		return;
+	NvAPI_Status ret = GetConnectedDisplays(displayIds, &noDisplays);
+	if (ret != NVAPI_OK) {
+		printf("GetConnectedDisplays failed ");
 	}
-
+	
+	std::vector<int> displayNumbers;
 	for (NvU32 i = 0; i < noDisplays; ++i) {
-		status = NvAPI_DISP_IdentifyDisplay(displayIDs[i]);
-		if (status != NVAPI_OK) {
-			std::cerr << "IdentifyDisplay failed: " << status << std::endl;
-		}
-		else {
-			std::cout << "Identified display " << i + 1 << " successfully." << std::endl;
-		}
+		displayNumbers.push_back(static_cast<int>(displayIds[i]));
 	}
+	overlays.ToggleOverlays(displayNumbers);
 }
 
 void loadCustomDisplay(NV_CUSTOM_DISPLAY* cd, int& horRes, int& verRes) {
@@ -183,6 +178,15 @@ NvAPI_Status ApplyCustomDisplay(int& horRes, int& verRes, float& rr) {
 			printf("Custom display saved for display %d\n", count);
 		}
 
+
+
+	}
+
+	if (ret != NVAPI_OK) {
+		printf("ApplyCustomDisplay failed = 0x%x\n", ret);
+	}
+	else {
+		printf("\nApplyCustomDisplay success.\n");
 	}
 
 	free(cd);

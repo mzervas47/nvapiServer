@@ -48,18 +48,12 @@ int _tmain(int argc, _TCHAR* argV[]) {
 
 				switch (currentTask.taskType) {
 					case nvapiTask::Identify_Displays:
-						identifyConnectedDisplays();
+						();
 						break;
 
 					case nvapiTask::Apply_Settings:
 						{
 							NvAPI_Status ret = ApplyCustomDisplay(horRes, verRes, rr);
-							if (ret != NVAPI_OK) {
-								printf("ApplyCustomDisplay failed = 0x%x\n", ret);
-							}
-							else {
-								printf("\nApplyCustomDisplay success.\n");
-							}
 
 						}
 						break;

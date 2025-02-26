@@ -3,7 +3,10 @@
 #include <mutex>
 #include <condition_variable>
 #include "crowServer.h"
-#include "nvapiHelper.h"
+
+
+
+
 
 
 
@@ -54,20 +57,25 @@ void handleRequest(const crow::request& req, crow::response& res, int& horRes, i
 	res.end();
 }
 
+static OverlayManager overlayManagerInstance;
+
 
 void startCrowServer(int& horRes, int& verRes, float& frameRate) {
 
 	crow::SimpleApp app;
 
-	CROW_ROUTE(app, "/").methods(crow::HTTPMethod::POST)([&](const crow::request& req, crow::response& res) {
+	CROW_ROUTE(app, "/applySettings").methods(crow::HTTPMethod::POST)([&](const crow::request& req, crow::response& res) {
 		handleRequest(req, res, horRes, verRes, frameRate);
 		});
 
 	CROW_ROUTE(app, "/identifyDisplays").methods(crow::HTTPMethod::POST)([]() {
-		identifyConnectedDisplays();
-		return crow::response(200, "Displays identified. ");
-		});
+		
+		};
 
 	app.port(8080).multithreaded().run();
 
 }
+
+
+
+

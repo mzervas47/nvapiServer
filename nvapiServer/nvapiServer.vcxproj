@@ -23,6 +23,7 @@
     <ClCompile Include="src\d2dHelper.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\nvapiHelper.cpp" />
+    <ClCompile Include="src\overlayManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="CMakeLists.txt" />
@@ -31,6 +32,7 @@
     <ClInclude Include="include\crowServer.h" />
     <ClInclude Include="include\d2dHelper.h" />
     <ClInclude Include="include\nvapiHelper.h" />
+    <ClInclude Include="include\overlayManager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
