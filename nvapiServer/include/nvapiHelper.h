@@ -4,6 +4,7 @@
 #include <queue>
 #include <d2dHelper.h>
 #include "overlayManager.h"
+#include "global.h"
 
 
 
@@ -21,8 +22,6 @@ struct nvapiTask {
 
 };
 
-extern std::queue<nvapiTask> nvapiTaskQueue;
-extern std::mutex taskQueueMutex;
-extern std::condition_variable cv;
+
 
 

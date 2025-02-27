@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="src\crowServer.cpp" />
     <ClCompile Include="src\d2dHelper.cpp" />
+    <ClCompile Include="src\global.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\nvapiHelper.cpp" />
     <ClCompile Include="src\overlayManager.cpp" />
@@ -31,6 +32,7 @@
   <ItemGroup>
     <ClInclude Include="include\crowServer.h" />
     <ClInclude Include="include\d2dHelper.h" />
+    <ClInclude Include="include\global.h" />
     <ClInclude Include="include\nvapiHelper.h" />
     <ClInclude Include="include\overlayManager.h" />
   </ItemGroup>

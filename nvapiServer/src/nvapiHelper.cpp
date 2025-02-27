@@ -91,7 +91,7 @@ NvAPI_Status GetConnectedDisplays(NvU32* displayIds, NvU32* noDisplays) {
 
 			for (NvU32 dispIndex = 0; dispIndex < dispIdCount; ++dispIndex) {
 				if (noDisplay >= NVAPI_MAX_DISPLAYS) {
-					printf("Exceeded maximum number of diaplay IDS\n");
+					printf("Exceeded maximum number of display Ids\n");
 					free(dispIds);
 					return NVAPI_ERROR;
 				}
@@ -125,7 +125,7 @@ NvAPI_Status ApplyCustomDisplay(int& horRes, int& verRes, float& rr) {
 
 	ret = GetConnectedDisplays(displayIds, &noDisplays);
 	if (ret != NVAPI_OK) {
-		printf("\Call to GetConnectedDisplays() failed\n");
+		printf("Call to GetConnectedDisplays() failed\n");
 		return ret;
 	}
 
@@ -182,12 +182,7 @@ NvAPI_Status ApplyCustomDisplay(int& horRes, int& verRes, float& rr) {
 
 	}
 
-	if (ret != NVAPI_OK) {
-		printf("ApplyCustomDisplay failed = 0x%x\n", ret);
-	}
-	else {
-		printf("\nApplyCustomDisplay success.\n");
-	}
+
 
 	free(cd);
 	return ret;
