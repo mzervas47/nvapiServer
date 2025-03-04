@@ -1,6 +1,7 @@
 #include <iostream>
 #include <thread>
 #include "crowServer.h"
+#include "global.h"
 
 
 

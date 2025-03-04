@@ -1,8 +1,8 @@
 #pragma once
 
-#include "nvapi.h"
 #include <queue>
 #include <d2dHelper.h>
+#include "nvapi.h"
 #include "overlayManager.h"
 #include "global.h"
 

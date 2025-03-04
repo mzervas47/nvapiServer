@@ -1,11 +1,12 @@
 #define NOMINMAX
 #include <windows.h>
-#include "overlayManager.h"
 #include <d2d1.h>
 #include <dwrite.h>
 #include <string>
 #include <iostream>
 #include <algorithm>
+#include "overlayManager.h"
+#include "global.h"
 
 // Link necessary libraries.
 #pragma comment(lib, "d2d1.lib")

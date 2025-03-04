@@ -1,8 +1,9 @@
 #include <iostream>
-#include "nvapiHelper.h"
 #include <queue>
 #include <mutex>
 #include <condition_variable>
+#include "nvapiHelper.h"
+#include "global.h"
 
 
 
